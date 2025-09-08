@@ -1,4 +1,4 @@
-export default function HomePage() {
+export default function Home() {
   return (
     <section className="page">
       <h1>Velkommen til forsiden!</h1>

@@ -8,4 +8,5 @@ import { NavLink } from "react-router-dom";
   <NavLink to="/about">About</NavLink>
   <NavLink to="/contact">Contact</NavLink>
 </nav>;
+
 export default Nav;

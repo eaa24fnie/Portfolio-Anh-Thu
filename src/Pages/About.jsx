@@ -1,4 +1,4 @@
-export default function AboutPage() {
+export default function About() {
     return(
         <section className="page">
             <h1>Om Os</h1>
