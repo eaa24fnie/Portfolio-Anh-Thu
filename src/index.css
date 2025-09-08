@@ -1,11 +1,10 @@
 :root {
-  --primary-color: rgb(30, 61, 38);
-  --primary-dark: rgb(9, 37, 13);
-  --primary-light: rgb(172, 201, 176);
-  --background: #f1f1f4;
+  --primary-color: #627A65;
+  --primary-dark: #1E3737;
+  --primary-light: #B7A892;
+  --burgundy: #5E2D3A;
   --text-dark: #333;
-  --text-light: #f1f1f1;
-  --white: #ffffff;
+  --light: #f1f1f1;
   --border-radius: 8px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -45,14 +44,14 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--text-light);
+  color: var(--light);
   background-color: var(--primary-dark);
   animation: hoverEffect 0.3s forwards;
 }
 
 .active {
-  background-color: var(--primary-dark);
-  color: var(--text-light);
+  background-color: var(--burgundy);
+  color: var(--light);
   text-decoration: underline;
 }
 
@@ -64,13 +63,21 @@ main {
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+h1 {
   color: var(--primary-dark);
   margin-bottom: 1rem;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 100;
+  color: var(--primary-light);
+  font-size: 2rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-dark);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
