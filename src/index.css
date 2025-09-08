@@ -18,8 +18,10 @@
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text-dark);
+  background: linear-gradient(var(--background) 70%, var(--primary-dark)150%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
   margin: 0;
@@ -29,15 +31,13 @@ body {
 
 /* ---------- Navigation ---------- */
 nav {
-  background-color: var(--primary-color);
   padding: 1rem 2rem;
-  box-shadow: var(--shadow);
   display: flex;
   justify-content: center;
 }
 
 nav a {
-  color: var(--text-light);
+  color: var(--text-dark);
   text-decoration: none;
   margin-right: 2rem;
   padding: 0.5rem 1rem;
@@ -45,6 +45,32 @@ nav a {
 }
 
 nav a:hover {
+  color: var(--text-light);
   background-color: var(--primary-dark);
   animation: hoverEffect 0.3s forwards;
+}
+
+.active {
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  text-decoration: underline;
+}
+
+/* ---------- Main Content ---------- */
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 100;
 }
