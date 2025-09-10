@@ -17,7 +17,7 @@
 }
 
 body {
-  background: linear-gradient(var(--background) 70%, var(--primary-dark)150%);
+  background: linear-gradient(var(--light) 70%, var(--primary-dark)150%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
@@ -44,8 +44,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--light);
-  background-color: var(--primary-dark);
+  color: var(--text-dark);
+  background-color: var(--primary-light);
   animation: hoverEffect 0.3s forwards;
 }
 
