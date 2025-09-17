@@ -15,7 +15,7 @@ const Parallax = () => {
 
   return (
     <div ref={parallaxRef} className="parallax">
-      <section className="text-container">
+      <section className={`text-container${inView ? " pop" : ""}`}>
         <h1 className="color-pop">YOUR</h1>
         <h3>HEADTURNING, SCROLL-STOPPING</h3>
         <h1>GRAPHICS</h1>

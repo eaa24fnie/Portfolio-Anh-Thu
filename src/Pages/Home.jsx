@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import Parallax from "../components/Parallax";
 import Preview from "../components/Preview";
-import Chat from "./Chat";
 
 export default function Home() {
   const faceRef = useRef(null);
@@ -44,7 +43,7 @@ export default function Home() {
           >
             <div className="img-wrapper">
               <img src="./src/assets/portrait_mono.jpg" alt="Anh Thu Kieu"/>
-              <img src="./src/assets/items.png" alt="Squares"/>
+              <img src="./src/assets/items-2.png" alt="Squares"/>
             </div>
             <h1 className="overlay-title">GRAPHIC <span>DESIGNER</span></h1>
             <h1 className="overlay-title">FRONTEND <span>DEVELOPER</span></h1>
