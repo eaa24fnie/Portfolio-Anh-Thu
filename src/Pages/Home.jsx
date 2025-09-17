@@ -1,7 +1,20 @@
+import { useRef, useEffect, useState } from "react";
 import Parallax from "../components/Parallax";
 import Preview from "../components/Preview";
 
 export default function Home() {
+  const faceRef = useRef(null);
+  const [faceInView, setFaceInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setFaceInView(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    if (faceRef.current) observer.observe(faceRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <section className="home-wrapper">
@@ -18,7 +31,10 @@ export default function Home() {
             </a>
             <img src="./src/assets/line.png" alt="straight line"/>
           </aside>
-          <aside className="face-wrapper">
+          <aside
+            className={`face-wrapper${faceInView ? " pop" : ""}`}
+            ref={faceRef}
+          >
             <div className="img-wrapper">
               <img src="./src/assets/portrait_mono.jpg" alt="Anh Thu Kieu"/>
               <img src="./src/assets/items.png" alt="Squares"/>
