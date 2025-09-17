@@ -451,7 +451,7 @@ p {
 }
 
 .about-me .content {
-  max-width: 800px;
+  max-width: 65vw;
   align-items: flex-start;
   padding: 3rem;
   z-index: 2;
@@ -541,5 +541,13 @@ p {
   .social {
     flex-direction: row;
     margin-top: 1rem;
+  }
+
+  .about-me img{
+    display: none;
+  }
+
+  .about-me .content{
+    font-size: 0.5rem;
   }
 }

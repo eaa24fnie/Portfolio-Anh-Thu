@@ -25,7 +25,6 @@ export default function Chat() {
 
     return(
         <section className="contact">
-
             <div className="form-container">
                 <h1>Let's Chat</h1>
                 <form ref={formRef}

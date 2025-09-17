@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import Parallax from "../components/Parallax";
 import Preview from "../components/Preview";
+import Chat from "./Chat";
 
 export default function Home() {
   const faceRef = useRef(null);
@@ -26,6 +27,12 @@ export default function Home() {
             <a href="./Chat" target="_blank" rel="noopener noreferrer">
               <img src="./src/assets/envelope.svg" alt="Mail Logo" />
             </a>
+            <a href="https://www.facebook.com/anhthu.kieu.90/?locale=da_DK" target="_blank" rel="noopener noreferrer">
+              <img src="./src/assets/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://www.instagram.com/in_sane258?igsh=MTBoc2hiOHIyOG9oag==" target="_blank" rel="noopener noreferrer">
+              <img src="./src/assets/instagram.svg" alt="Instagram" />
+            </a>
             <a href="https://github.com/anhthu258" target="_blank" rel="noopener noreferrer">
               <img src="./src/assets/github.svg" alt="Github Logo" />
             </a>
@@ -44,7 +51,7 @@ export default function Home() {
           </aside>
       </section>
       <section>
-          <Parallax/>
+        <Parallax/>
       </section>
       <section>
         <Preview/>
