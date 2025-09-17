@@ -23,7 +23,7 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/anh-thu-kieu-411293383/" target="_blank" rel="noopener noreferrer">
               <img src="./src/assets/linkedin.svg" alt="Linkedin Logo" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="./Chat" target="_blank" rel="noopener noreferrer">
               <img src="./src/assets/envelope.svg" alt="Mail Logo" />
             </a>
             <a href="https://github.com/anhthu258" target="_blank" rel="noopener noreferrer">

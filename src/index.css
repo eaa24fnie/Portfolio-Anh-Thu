@@ -403,6 +403,70 @@ p {
   height: 30px;
 }
 
+/* ---------- About Me ---------- */
+.about-me {
+  position: relative;
+  background-image: url('./src/assets/doodlr-half.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start; 
+  justify-content: flex-start;
+  text-align: left;     
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.about-me::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.6); /* White overlay, 0.6 opacity. Adjust as needed */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-me img {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 39vw;
+  height: 95%;
+  margin-bottom: 0;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: img-pop 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;
+}
+
+@keyframes img-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-me .content {
+  max-width: 800px;
+  align-items: flex-start;
+  padding: 3rem;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: content-pop 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;
+}
+
+@keyframes content-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes square-pop {
   to {
     opacity: 1;
