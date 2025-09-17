@@ -1,34 +1,37 @@
+import Parallax from "../components/Parallax";
+import Preview from "../components/Preview";
+
 export default function Home() {
   return (
     <>
-      <section className="page">
-        <div className="home-wrapper">
+      <section className="home-wrapper">
           <aside className="social">
-              <img src="./src/assets/line.png" alt="straight line"/>
-              <a href="https://www.linkedin.com/in/anh-thu-kieu-411293383/" target="_blank" rel="noopener noreferrer">
-                <img src="./src/assets/linkedin.svg" alt="Linkedin Logo" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <img src="./src/assets/envelope.svg" alt="Mail Logo" />
-              </a>
-              <a href="https://github.com/anhthu258" target="_blank" rel="noopener noreferrer">
-                <img src="./src/assets/github.svg" alt="Github Logo" />
-              </a>
-              <img src="./src/assets/line.png" alt="straight line"/>
+            <img src="./src/assets/line.png" alt="straight line"/>
+            <a href="https://www.linkedin.com/in/anh-thu-kieu-411293383/" target="_blank" rel="noopener noreferrer">
+              <img src="./src/assets/linkedin.svg" alt="Linkedin Logo" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src="./src/assets/envelope.svg" alt="Mail Logo" />
+            </a>
+            <a href="https://github.com/anhthu258" target="_blank" rel="noopener noreferrer">
+              <img src="./src/assets/github.svg" alt="Github Logo" />
+            </a>
+            <img src="./src/assets/line.png" alt="straight line"/>
           </aside>
           <aside className="face-wrapper">
             <div className="img-wrapper">
               <img src="./src/assets/portrait_mono.jpg" alt="Anh Thu Kieu"/>
               <img src="./src/assets/items.png" alt="Squares"/>
             </div>
-              <h1 className="overlay-title">GRAPHIC <span>DESIGNER</span></h1>
-              <h1 className="overlay-title">FRONTEND <span>DEVELOPER</span></h1>
+            <h1 className="overlay-title">GRAPHIC <span>DESIGNER</span></h1>
+            <h1 className="overlay-title">FRONTEND <span>DEVELOPER</span></h1>
           </aside>
-        </div>
-        
-      <section>Parallax</section>
-      <section>Projects</section>
-
+      </section>
+      <section>
+          <Parallax/>
+      </section>
+      <section>
+        <Preview/>
       </section>
     </>
   );

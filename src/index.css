@@ -33,7 +33,6 @@ body {
   font-family: lato, sans-serif;
   font-weight: 400;
   margin: 0;
-  padding: 2rem;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -54,7 +53,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--pink);
+  background: var(--pink);
+  color: var(--primary-light);
 }
 
 .active {
@@ -64,11 +64,15 @@ nav a:hover {
 }
 
 .wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  height: 100%;
-  opacity: 0;
+  height: 100px; /* or your preferred height */
+  z-index: 1000;
   transform: scale(0.5);
   animation: wrapper 0.6s cubic-bezier(0.23, 1.02, 0.32, 1) 0.2s forwards;
 }
@@ -203,12 +207,106 @@ p {
   display: flex;
   justify-content: center;  
   align-items: center;
-  height: calc(100vh - 100px);
   overflow: hidden;      
   gap: 1rem;  
   opacity: 0;
+  padding: 2rem;
+  margin-bottom: 1rem;
   transform: scale(0.5);
   animation: home-wrapper 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;       
+}
+
+/* ---------- Parallax ---------- */
+.parallax {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doodlr {
+  background-image: url('./src/assets/doodlr.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.square-pink{
+  background-image: url('./src/assets/square-pink.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.square-grey {
+  background-image: url('./src/assets/square-grey.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.square-pink,
+.square-grey {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.square-pink.pop {
+  animation: square-pop 0.7s cubic-bezier(0.23, 1.02, 0.32, 1) 0.4s forwards;
+}
+
+.square-grey.pop {
+  animation: square-pop 0.7s cubic-bezier(0.23, 1.02, 0.32, 1) 0.6s forwards;
+}
+
+@keyframes square-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-container {
+  font-family: montserrat, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.text-container h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.text-container h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.color-pop{
+  color: var(--pink);
 }
 
 @keyframes home-wrapper {
