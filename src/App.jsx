@@ -1,17 +1,20 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Link } from "react-router-dom";
 import Project from "./pages/Project";
 import Chat from "./pages/Chat";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import { Link } from "react-router-dom";
 
 function App() {
   return (
     <section>
       <div className="wrapper">
-        <Link href="/">
-          <img className="logo-pop" src="/assets/logo.png" alt="Anh Thu Logo" />
+        <Link to="/">
+          <img
+            className="logo-pop"
+            src="/Portfolio-Anh-Thu/assets/logo.png"
+            alt="Anh Thu Logo"
+          />
         </Link>
         <Nav />
       </div>
@@ -24,4 +27,5 @@ function App() {
     </section>
   );
 }
+
 export default App;

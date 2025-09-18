@@ -8,6 +8,8 @@ export default function Chat() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setError(false);
+    setSuccess(false);
 
     emailjs
       .sendForm("service_portfolio", "template_6en9lkh", formRef.current, {
@@ -17,8 +19,8 @@ export default function Chat() {
         () => {
           setSuccess(true);
         },
-        (error) => {
-          setError("false");
+        () => {
+          setError(true);
         }
       );
   };
@@ -37,8 +39,14 @@ export default function Chat() {
             name="message"
           />
           <button type="submit">Submit</button>
-          {error && "Something went wrong, please try again."}
-          {success && "Message sent successfully!"}
+          {error && (
+            <p className="error-message">
+              Something went wrong, please try again.
+            </p>
+          )}
+          {success && (
+            <p className="success-message">Message sent successfully!</p>
+          )}
         </form>
       </div>
 
