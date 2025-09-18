@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <div className="wrapper">
-      <a href="/"><img className="logo-pop" src="./src/assets/logo.png" alt="Anh Thu Logo" /></a>
+      <a href="/"><img className="logo-pop" src="./public/assets/logo.png" alt="Anh Thu Logo" /></a>
       <div className="nav-hover-area">
         <Nav />
       </div>

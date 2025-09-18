@@ -19,31 +19,31 @@ export default function Home() {
     <>
       <section className="home-wrapper">
           <aside className="social">
-            <img src="./src/assets/line.png" alt="straight line"/>
+            <img src="./public/assets/line.png" alt="straight line"/>
             <a href="https://www.linkedin.com/in/anh-thu-kieu-411293383/" target="_blank" rel="noopener noreferrer">
-              <img src="./src/assets/linkedin.svg" alt="Linkedin Logo" />
+              <img src="./public/assets/linkedin.svg" alt="Linkedin Logo" />
             </a>
             <a href="./Chat" target="_blank" rel="noopener noreferrer">
-              <img src="./src/assets/envelope.svg" alt="Mail Logo" />
+              <img src="./public/assets/envelope.svg" alt="Mail Logo" />
             </a>
             <a href="https://www.facebook.com/anhthu.kieu.90/?locale=da_DK" target="_blank" rel="noopener noreferrer">
-              <img src="./src/assets/facebook.svg" alt="Facebook" />
+              <img src="./public/assets/facebook.svg" alt="Facebook" />
             </a>
             <a href="https://www.instagram.com/in_sane258?igsh=MTBoc2hiOHIyOG9oag==" target="_blank" rel="noopener noreferrer">
-              <img src="./src/assets/instagram.svg" alt="Instagram" />
+              <img src="./public/assets/instagram.svg" alt="Instagram" />
             </a>
             <a href="https://github.com/anhthu258" target="_blank" rel="noopener noreferrer">
-              <img src="./src/assets/github.svg" alt="Github Logo" />
+              <img src="./public/assets/github.svg" alt="Github Logo" />
             </a>
-            <img src="./src/assets/line.png" alt="straight line"/>
+            <img src="./public/assets/line.png" alt="straight line"/>
           </aside>
           <aside
             className={`face-wrapper${faceInView ? " pop" : ""}`}
             ref={faceRef}
           >
             <div className="img-wrapper">
-              <img src="./src/assets/portrait_mono.jpg" alt="Anh Thu Kieu"/>
-              <img src="./src/assets/items-2.png" alt="Squares"/>
+              <img src="./public/assets/portrait_mono.jpg" alt="Anh Thu Kieu"/>
+              <img src="./public/assets/items-2.png" alt="Squares"/>
             </div>
             <h1 className="overlay-title">GRAPHIC <span>DESIGNER</span></h1>
             <h1 className="overlay-title">FRONTEND <span>DEVELOPER</span></h1>

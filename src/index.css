@@ -234,7 +234,7 @@ p {
 }
 
 .doodlr {
-  background-image: url('./src/assets/doodlr.png');
+  background-image: url('./public/assets/doodlr.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -245,7 +245,7 @@ p {
 }
 
 .square-pink{
-  background-image: url('./src/assets/square-pink.png');
+  background-image: url('./public/assets/square-pink.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -256,7 +256,7 @@ p {
 }
 
 .square-grey {
-  background-image: url('./src/assets/square-grey.png');
+  background-image: url('./public/assets/square-grey.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -283,7 +283,7 @@ p {
 
 /* ---------- Contact ---------- */
 .contact { 
-  background-image: url('./src/assets/doodlr.png');
+  background-image: url('./public/assets/doodlr.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -408,7 +408,7 @@ p {
 /* ---------- About Me ---------- */
 .about-me {
   position: relative;
-  background-image: url('./src/assets/doodlr-half.png');
+  background-image: url('./public/assets/doodlr-half.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

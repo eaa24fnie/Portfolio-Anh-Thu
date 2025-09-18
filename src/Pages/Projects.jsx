@@ -4,15 +4,14 @@ import Products from "../components/Products";
 function Projects() {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function fetchProducts() {
-      const response = await fetch("/data/Products.json");
-      const data = await response.json();
-      
-      setProducts(data);
-    }
-    fetchProducts();
-  }, []);
+useEffect(() => {
+  async function fetchProducts() {
+    const response = await fetch("/data/Products.json");
+    const data = await response.json();
+    setProducts(data.Products);
+  }
+  fetchProducts();
+}, []);
 
   return (
     <div className="container">

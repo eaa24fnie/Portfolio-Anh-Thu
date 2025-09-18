@@ -1,7 +1,7 @@
 export default function About() {
     return(
         <section className="about-me">
-            <img src="./src/assets/portrait.png" alt="Me" />
+            <img src="./public/assets/portrait.png" alt="Me" />
             <div className="content">
             <h1>About Me</h1>
             <p>
