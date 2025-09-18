@@ -475,27 +475,26 @@ p {
 /* Each slide */
 .swiper-slide,
 .carusel-item {
-  flex: 0 0 80vw; /* Each slide takes 80% of viewport width */
+  flex: 0 0 80vw;
   max-width: 400px;
   min-width: 250px;
-  background: #fff;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);  
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s;
   position: relative;
-  padding: 1rem;
+  padding: 0;   
 }
 
 .swiper-slide img,
 .carusel-item img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 350px;
+  object-fit: contain;
   border-radius: var(--border-radius);
+  background: transparent;
 }
 
 .overlay {
@@ -553,6 +552,17 @@ p {
 .swiper {
   flex: 1 1 0;
   min-width: 0;
+}
+
+.type-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 @keyframes img-pop {

@@ -1,5 +1,5 @@
-{
-  "Products": [
+[
+  [
     {
       "id": 1,
       "title": "Webuniverse",
@@ -36,4 +36,4 @@
       "link": "http://steno.makiro.dk"
     }
   ]
-}
+]

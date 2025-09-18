@@ -1,42 +1,49 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
-const slides = [
-	{
-		img: "/assets/streetfood-prev.png",
-		alt: "Aarhus Street Food",
-		title: "Aarhus Street Food",
-		desc: "Reworking of Aarhus Street Food website",
-	},
-	{
-		img: "/assets/zerobuzz-prev.png",
-		alt: "ZeroBuzzbrew",
-		title: "Zero Buzz Brew",
-		desc: "Branding of fictional alcohol free brand Zero Buzz Brew",
-	},
-	{
-		img: "/assets/radar-prev.png",
-		alt: "Aarhus Radar",
-		title: "Aarhus Radar",
-		desc: "Rebranding of Aarhus Radar",
-	},
-	{
-		img: "/assets/studylab-prev.png",
-		alt: "StudyLab",
-		title: "StudyLab",
-		desc: "Branding of fictional magazine StudyLab",
-	},
-	{
-		img: "/assets/steno-prev.png",
-		alt: "Steno Museum",
-		title: "Steno Museum",
-		desc: "Designing an interactive digital exhibition for Steno Museum",
-	},
+const galleryTexts = [
+	"My Projects Gallery"
 ];
+
+function useTypewriter(texts, typingSpeed = 100, pause = 1200) {
+	const [displayed, setDisplayed] = useState("");
+	const [index, setIndex] = useState(0);
+	const [deleting, setDeleting] = useState(false);
+
+	useEffect(() => {
+		let timeout;
+		const currentText = texts[index % texts.length];
+
+		if (!deleting && displayed.length < currentText.length) {
+			timeout = setTimeout(() => {
+				setDisplayed(currentText.slice(0, displayed.length + 1));
+			}, typingSpeed);
+		} else if (!deleting && displayed.length === currentText.length) {
+			timeout = setTimeout(() => setDeleting(true), pause);
+		} else if (deleting && displayed.length > 0) {
+			timeout = setTimeout(() => {
+				setDisplayed(currentText.slice(0, displayed.length - 1));
+			}, typingSpeed / 2);
+		} else if (deleting && displayed.length === 0) {
+			setDeleting(false);
+			setIndex((i) => (i + 1) % texts.length);
+		}
+		return () => clearTimeout(timeout);
+	}, [displayed, deleting, index, texts, typingSpeed, pause]);
+
+	return displayed;
+}
 
 const Preview = () => {
 	const swiperRef = useRef(null);
+	const [slides, setSlides] = useState([]);
 	const [current, setCurrent] = useState(0);
 	const slideWidth = 350;
+
+	useEffect(() => {
+		fetch("/data/slide.json")
+			.then((res) => res.json())
+			.then((data) => setSlides(data));
+	}, []);
 
 	const scrollLeft = () => {
 		if (swiperRef.current) {
@@ -64,9 +71,11 @@ const Preview = () => {
 		}
 	};
 
+	const typedH1 = useTypewriter(galleryTexts);
+
 	return (
 		<section className="projects-gallery">
-			<h1>My Projects Gallery</h1>
+			<h1>{typedH1}<span className="type-cursor">|</span></h1>
 			<div className="carousel-arrows">
 				<button className="arrow left" onClick={scrollLeft} aria-label="Scroll left">
 					<img src="/assets/arrow-left.png" alt="Arrow left"/>
