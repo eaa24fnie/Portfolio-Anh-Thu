@@ -1,4 +1,4 @@
-import { Navigate, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
