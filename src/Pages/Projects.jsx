@@ -1,29 +1,30 @@
-import { useEffect, useState } from "react";    
-import Projects from "../components/MyWork";
+import { useEffect, useState } from "react"; 
+import Products from "../components/Products";
 
-function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
+function Projects() {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function fetchProjects() {
-      const response = await fetch("/webprojects.json");
+    async function fetchProducts() {
+      const response = await fetch("/data/Products.json");
       const data = await response.json();
-      setProjects(data);
+      
+      setProducts(data);
     }
-    fetchProjects();
+    fetchProducts();
   }, []);
 
   return (
     <div className="container">
       <h1>Projects</h1>
       <section className="grid">
-        {projects.map(project => (
-          <Projects
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            link={project.link}
+        {products.map(product => (
+          <Products
+            key={product.id}
+            title={product.title}
+            description={product.description}
+            image={product.image}
+            link={product.link}
           />
         ))}
       </section>
@@ -31,4 +32,4 @@ function ProjectsPage() {
   );
 }
 
-export default ProjectsPage;
+export default Projects;
