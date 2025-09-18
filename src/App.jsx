@@ -10,9 +10,7 @@ function App() {
     <>
     <div className="wrapper">
       <a href="/"><img className="logo-pop" src="/assets/logo.png" alt="Anh Thu Logo" /></a>
-      <div className="nav-hover-area">
         <Nav />
-      </div>
     </div>
       <Routes>
         <Route path="/" element={<Home />} />

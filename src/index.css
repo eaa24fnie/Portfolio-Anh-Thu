@@ -641,12 +641,25 @@ p {
 /* ---------- Projects ---------- */
 .projects-list {
   padding: 2rem;
+  margin: 2rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;  
+  margin-top: 0.5rem;
 }
 
 .projects-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;  
   gap: 2rem;
+  overflow-x: auto;      
+  padding-bottom: 1rem;  
+  scrollbar-width: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
@@ -676,6 +689,70 @@ p {
   margin-bottom: 1rem;
 }
 
+/* ---------- Projects branding ---------- */
+.branding {
+    margin: 3rem;
+    padding: 2rem;
+    background: var(--primary-light);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+    display: flex;
+    gap: 3rem;
+}
+
+.branding div {
+  flex: 1 1 320px;
+  min-width: 280px;
+}
+
+.branding h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #7a4c1e;
+}
+
+.branding h2 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem 0;
+  color: #a86c2c;
+}
+
+.branding p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.branding aside {
+  width: 50%;
+}
+
+.branding img {
+  width: 100%;
+  max-width: 250px;
+  margin: 0.5rem 1rem 1rem 0;
+  border-radius: 0.7rem;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.samuel-web{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .branding {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .branding img {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
 @media (max-width: 700px) {
   .face-wrapper img {
     max-width: 80vw;
