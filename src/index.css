@@ -234,7 +234,7 @@ p {
 }
 
 .doodlr {
-  background-image: url('./public/assets/doodlr.png');
+  background-image: url('/assets/doodlr.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -245,7 +245,7 @@ p {
 }
 
 .square-pink{
-  background-image: url('./public/assets/square-pink.png');
+  background-image: url('/assets/square-pink.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -256,7 +256,7 @@ p {
 }
 
 .square-grey {
-  background-image: url('./public/assets/square-grey.png');
+  background-image: url('/assets/square-grey.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -283,7 +283,7 @@ p {
 
 /* ---------- Contact ---------- */
 .contact { 
-  background-image: url('./public/assets/doodlr.png');
+  background-image: url('/assets/doodlr.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -408,7 +408,7 @@ p {
 /* ---------- About Me ---------- */
 .about-me {
   position: relative;
-  background-image: url('./public/assets/doodlr-half.png');
+  background-image: url('/assets/doodlr-half.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -437,10 +437,83 @@ p {
   width: 75%;
   height: 95%;
   margin-bottom: 0;
-  z-index: 1;
+  z-index: 3;
   opacity: 0;
   transform: scale(0.5);
   animation: img-pop 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;
+}
+
+@keyframes img-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-me .content {
+  max-width: 65vw;
+  align-items: flex-start;
+  padding: 3rem;
+  z-index: 3;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: content-pop 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;
+}
+
+@keyframes content-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes square-pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-container {
+  font-family: montserrat, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.text-container.pop {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.text-container h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.text-container h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.color-pop{
+  color: var(--pink);
+}
+
+@keyframes home-wrapper {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ---------- Preview carousel ---------- */
@@ -565,77 +638,42 @@ p {
   51%, 100% { opacity: 0; }
 }
 
-@keyframes img-pop {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+/* ---------- Projects ---------- */
+.projects-list {
+  padding: 2rem;
 }
 
-.about-me .content {
-  max-width: 65vw;
-  align-items: flex-start;
-  padding: 3rem;
-  z-index: 2;
-  opacity: 0;
-  transform: scale(0.5);
-  animation: content-pop 0.9s cubic-bezier(0.23, 1.02, 0.32, 1) 0.3s forwards;
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-@keyframes content-pop {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes square-pop {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.text-container {
-  font-family: montserrat, sans-serif;
-  font-weight: 900;
-  font-style: italic;
+.project-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.5s, transform 0.5s;
+  align-items: center;
+  width: 260px;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow, 0 2px 8px rgba(0,0,0,0.1));
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
 }
 
-.text-container.pop {
-  opacity: 1;
-  transform: scale(1);
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-.text-container h1 {
-  font-size: 4rem;
+.project-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
-  text-align: center;
-}
-.text-container h3 {
-  font-size: 2rem;
-  text-align: center;
-}
-
-.color-pop{
-  color: var(--pink);
-}
-
-@keyframes home-wrapper {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 @media (max-width: 700px) {

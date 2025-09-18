@@ -1,5 +1,4 @@
 [
-  [
     {
       "id": 1,
       "title": "Webuniverse",
@@ -35,5 +34,4 @@
       "image": "/assets/steno.png",
       "link": "http://steno.makiro.dk"
     }
-  ]
 ]

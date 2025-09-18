@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-import Projects from "./pages/Projects";
+import Project from "./pages/Project";
 import About from "./pages/About";
 import Chat from "./pages/Chat";
 import Nav from "./components/Nav";
@@ -16,8 +16,8 @@ function App() {
     </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Chat" element={<Chat />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/project" element={<Project />} />
         <Route path="/about" element={<About />} />
       </Routes>
  
